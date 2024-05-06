@@ -1,0 +1,70 @@
+<%- include('./header.ejs') %>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper py-3 bg-transparent">
+        
+        <h1 class="text-center mb-4 ">Add Category</h1>
+        <div class="contianer">
+          <div class="col-10 shadow mx-auto p-4">
+            <form method="post" action="/category">
+              <label for="" class="form-label fs-5">Category Name:</label>
+                <input type="text" name="name" placeholder="Enter name" class="form-control">
+                <button type="submit" class="btn btn-primary form-control mt-3">Submit</button>
+            </form>
+          </div>
+        </div>
+    <table class="table table-striped mt-5 text-center container shadow">
+        <tr>
+        <th><h4 class="text-center">Category List</h4></th>
+    </tr>
+    <% data.forEach((data, i) => { %>
+    <tr>
+        <td><%= data.name %></td>
+    </tr>
+    <% }) %>
+    </table>
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    <script src="../assets/libs/flot/excanvas.js"></script>
+    <script src="../assets/libs/flot/jquery.flot.js"></script>
+    <script src="../assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="../assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="../assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="../assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="../dist/js/pages/chart/chart-page-init.js"></script>
+  </body>
+</html>
+<%- include('./footer.ejs') %>

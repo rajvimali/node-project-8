@@ -1,0 +1,51 @@
+<%- include('./header.ejs') %>
+      <div class="page-wrapper">
+        <h1 class="text-center">Product List</h1>
+        <section style="background-color: #eee;">
+          <div class="container py-5">
+            <div class="row justify-content-center">
+              <% productlist.forEach((data, i) => { %>
+
+              <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="card text-black">
+                  <img src="<%= data.img %>"
+                    class="card-img-top" alt="Apple Computer" />
+                  <div class="card-body">
+                    <div class="text-center">
+                      <h5 class="card-title"><%= data.title %></h5>
+                      <p class="text-muted mb-4"><%= data.description %></p>
+                    </div>
+                    <div>
+                      <div class="d-flex justify-content-between">
+                        <span>Price</span><span>$<%= data.price %></span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="d-flex justify-content-between pt-2">
+                        <span>
+                          <%= data.extraCategoryId.name %> < <%= data.extraCategoryId.subCategoryId.name %> < <%= data.extraCategoryId.subCategoryId.categoryId.name %>
+                          
+                        </span>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <% }) %>
+            </div>
+          </div>
+        </section>
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+    </div>
+    <%- include('./footer.ejs') %>

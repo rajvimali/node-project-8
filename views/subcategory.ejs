@@ -1,0 +1,44 @@
+<%- include('./header.ejs') %>
+      <div class="page-wrapper py-3 bg-transparent">
+        
+        <h1 class="text-center mb-4 ">Add Sub Category</h1>
+        <div class="contianer">
+            <div class="col-10 shadow mx-auto p-4">
+
+    <form method="post" action="/subcategory">
+        <label for="" class="form-label fs-5">SubCategory Name:</label>
+        <input type="text" name="name" placeholder="Enter name" class="form-control mb-2">
+        <select name="categoryId" id=""  class="form-control " required>
+            <% catdata.forEach((data,i)=>{%>
+            <option value=<%= data.id %>><%= data.name %></option>
+            <% }) %>
+        </select>
+        <button type="submit" class="btn btn-primary form-control mt-3">Add</button>
+    </form>
+</div>
+</div>
+
+    <table class="table text-center mt-5 table-bordered container shadow">
+        <tr>
+        <th><h4>SubCategory</h4></th>
+        <th><h4>Category</h4></th>
+    </tr>
+    <% subdata.forEach((data, i) => { %>
+    <tr>
+        <td class="fs-5"><%= data.name %></td>
+        <td class="fs-5"><%= data.categoryId.name %></td>
+    </tr>
+    <% }) %>
+    </table>
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <%- include('./footer.ejs') %>
